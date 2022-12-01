@@ -5,6 +5,7 @@ if [ $# -eq 0 ]
     exit
 fi
 token=$( cat aocsession.user )
-curl --cookie "session=$token" https://adventofcode.com/2022/day/$1/input -o day$1.txt
+email=$( cat email.user )
+curl --user-agent "github.com/FHoekstra74/aoc2022 by $email" --cookie "session=$token" https://adventofcode.com/2022/day/$1/input -o day$1.txt
 echo 
 cat day$1.txt
