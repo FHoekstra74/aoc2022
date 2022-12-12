@@ -14,8 +14,7 @@ for run in range(2):
         if pos == end:
             print(dist)
             break
-        elif pos in seen: continue
-        else:
+        elif pos not in seen:
             seen.add(pos)
             for dx, dy in ((0, 1), (1, 0), (0, -1), (-1, 0)):
                 if (pos[0] + dx, pos[1] + dy) in grid and ord(grid[(pos[0] + dx, pos[1] + dy)]) - ord(grid[(pos[0], pos[1])]) <= 1:
