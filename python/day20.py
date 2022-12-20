@@ -13,6 +13,6 @@ for run in range(2):
             numbers.insert(0, number)
     while numbers[0].val != 0: numbers.rotate(-1)
     for _ in range(3):
-        for _ in range(1000): numbers.rotate(-1)
+        numbers.rotate(-1000)
         res += numbers[0].val
     print(res)
