@@ -3,12 +3,12 @@ def calc (inst, mode):
         for k,v in inst.items():
             if type(v) is str:
                 i = v.split()
-                if type(inst[i[0]]) is int and type(inst[i[2]]) is int:
-                    num1, num2, res  = (int)(inst[i[0]]), (int)(inst[i[2]]), 0
+                if type(inst[i[0]]) is not str and type(inst[i[2]]) is not str:
+                    num1, num2, res  = inst[i[0]], inst[i[2]], 0
                     if i[1] == "+": res = num1 + num2
                     elif i[1] == "-": res = num1 - num2
                     elif i[1] == "*": res = num1 * num2
-                    elif i[1] == "/": res = num1 // num2
+                    elif i[1] == "/": res = num1 / num2
                     inst[k] = res
                     if k == "root": return res if mode == 1 else num1 - num2
 
@@ -28,3 +28,4 @@ while True:
     else:
         print("b:", mid)
         break
+    
